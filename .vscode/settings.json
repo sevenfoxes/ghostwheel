@@ -1,0 +1,19 @@
+{
+  "stylelint.enable": true,
+  "css.validate": false,
+  "html.validate.scripts": false,
+  "files.associations": {
+    "*.js": "javascriptreact",
+    "*.html": "liquid"
+  },
+  "editor.minimap.enabled": false,
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    ".vscode": true,
+    "_site": true
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "name": "ghostwheel",
+  "version": "1.0.0",
+  "description": "jekyll and css modules in perfect harmony",
+  "main": "index.js",
+  "lanyon": {
+    "entries": [
+      "app"
+    ]
+  },
+  "scripts": {
+    "install": "lanyon install",
+    "build": "lanyon build",
+    "build:emoji": "lanyon build:emoji",
+    "build:production": "LANYON_ENV=production lanyon build",
+    "serve": "lanyon serve",
+    "serve:production": "LANYON_ENV=production lanyon serve",
+    "start": "lanyon start",
+    "start:production": "npm run build:production && npm run serve:production",
+    "encrypt": "lanyon encrypt",
+    "deploy": "lanyon deploy"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0"
+  }
+}
