@@ -1,0 +1,5 @@
+{% assign iconClass = style | getKey: include.name %}
+
+<svg {% if include.scale %} width="{{ include.scale }}%" {% endif %}{% if include.viewBox %} viewBox="{{ include.viewBox }}" {% endif %} class="{{ iconClass }}">
+  <use xlink:href="#{{ include.name }}" />
+</svg>

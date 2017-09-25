@@ -1,0 +1,27 @@
+.wrapper {
+  background: #333;
+  color: #fff;
+  padding: 1rem 0;
+
+  > div {
+    display: flex;
+  }
+}
+
+.logo {
+  align-items: center;
+  color: #fff;
+  display: flex;
+  fill: white;
+  text-decoration: none;
+  height: 3rem;
+
+  span {
+    flex: 1;
+    padding-left: 1rem;
+  }
+
+  svg {
+    width: 35px;
+  }
+}

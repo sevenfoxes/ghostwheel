@@ -1,0 +1,10 @@
+{% assign style = site.data.css.component_site-header__style %}
+
+<header class="{{ style.wrapper }}">
+  <div class="{{ layout-style.container }}">
+    <a href="/" class="{{ style.logo}}">
+      {% include svg-frag.html name="fire" %}
+      <span>{{ site.title }}</span>
+    </a>
+  </div>
+</header>
