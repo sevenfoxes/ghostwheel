@@ -1,3 +1,5 @@
 node_modules
 _site
-jekyll/_data/css/*.json
+jekyll/_data/css
+jekyll/assets
+.DS_Store
