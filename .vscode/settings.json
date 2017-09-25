@@ -14,7 +14,6 @@
     "**/CVS": true,
     "**/.DS_Store": true,
     ".vscode": true,
-    "_site": true,
-    "**.lock": true
+    "_site": true
   }
 }
