@@ -1,18 +1,21 @@
 {
   "name": "ghostwheel",
+  "author": "Scott Nesham",
   "version": "1.0.0",
   "description": "jekyll and css modules in perfect harmony",
   "main": "index.js",
-  "lanyon": {
-    "entries": [
-      "app"
-    ]
-  },
   "scripts": {
+    "preinstall": "nvm install && nvm use",
+    "build": "webpack",
     "clean": "rm -rf _site",
-    "start": "webpack"
+    "start": "webpack --watch"
   },
   "stylelint": {
+    "ignoreFiles": [
+      "node_modules",
+      "_site",
+      "jekyll"
+    ],
     "syntax": "scss",
     "extends": "stylelint-config-standard",
     "plugins": [
@@ -38,9 +41,9 @@
       ]
     }
   },
-  "author": "",
   "license": "ISC",
   "devDependencies": {
+    "autoprefixer": "^7.1.4",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.0.0",
     "babel-jest": "^21.0.2",
@@ -48,11 +51,25 @@
     "babel-preset-env": "^1.6.0",
     "babel-register": "^6.26.0",
     "browser-sync": "^2.18.13",
+    "browser-sync-webpack-plugin": "^1.2.0",
+    "clean-css-loader": "^0.1.3",
+    "css-loader": "^0.28.7",
     "eslint": "^4.7.2",
     "eslint-plugin-babel": "^4.1.2",
     "eslint-plugin-react": "^7.3.0",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "node-sass": "^4.5.3",
+    "pluralize": "^7.0.0",
+    "postcss-load-config": "^1.2.0",
+    "postcss-loader": "^2.0.6",
+    "postcss-modules": "^0.8.0",
+    "postcss-scss": "^1.0.2",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.18.2",
     "stylelint": "^8.1.1",
     "stylelint-config-standard": "^17.0.0",
-    "stylelint-scss": "^2.1.0"
+    "stylelint-scss": "^2.1.0",
+    "webpack": "^3.6.0",
+    "webpack-shell-plugin": "^0.5.0"
   }
 }

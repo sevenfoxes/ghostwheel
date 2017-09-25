@@ -1,5 +1,7 @@
 ---
-title: home
+title: Home Page
+layout: page
 ---
 
-this is the homepage.
+I am home
+sd;l,sdc

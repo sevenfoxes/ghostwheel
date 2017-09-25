@@ -1,0 +1,6 @@
+{
+  "retainLines": true,
+  "presets": [
+    "env"
+  ]
+}
