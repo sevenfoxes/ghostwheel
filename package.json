@@ -28,6 +28,9 @@
     "classnames": "^2.3.1",
     "color": "^4.0.1",
     "lodash": "^4.17.21",
-    "react": "^17.0.2"
+    "react": "^17.0.2",
+    "react-jss": "^10.8.2",
+    "recoil": "^0.5.2",
+    "use-react-dimensions": "^2.0.1"
   }
 }
