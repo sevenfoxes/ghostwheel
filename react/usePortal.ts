@@ -1,46 +1,42 @@
 import { useEffect, useRef } from "react";
 
-const createRootElement = (id) => {
+const createRootElement = (id: string) => {
   const container = document.createElement('div');
   container.setAttribute('id', id);
   return container;
 };
 
-const addRootElement = (element) => {
+const addRootElement = (element: HTMLElement) => {
   document.body.insertBefore(
     element,
     document.body.lastElementChild.nextElementSibling,
   );
 }
 
-export const usePortal = (id) => {
+export const usePortal = (id: string) => {
   const ref = useRef(null);
 
   useEffect(() => {
-    const existingParent = document.querySelector(`#${id}`);
-    const parent = existingParent || createRootElement(id);
+    const existingParent: HTMLElement = document.querySelector(`#${id}`);
+    const parent = existingParent ? existingParent : createRootElement(id);
 
     if (!existingParent) {
-      addRootElement(parent)
+      addRootElement(parent);
+    }
+
+    if (!ref.current) {
+      ref.current = parent;
     }
 
     parent.appendChild(ref.current)
 
-    return () => {
+    return (): void => {
       ref.current.remove();
       if (!parent.childElementCount) {
         parent.remove();
       }
     };
   }, [id])
-
-  const getRoot = () => {
-    if (!ref.current) {
-      ref.current = document.createElement(`div`);
-    }
-    return ref.current;
-  }
-  return getRoot()
 }
 
 
