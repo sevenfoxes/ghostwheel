@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/sevenfoxes/ghostwheel#readme",
   "devDependencies": {
+    "@types/react": "^17.0.34",
     "clean-webpack-plugin": "^4.0.0",
     "eslint": "^8.2.0",
     "eslint-plugin-jest": "^25.2.4",
