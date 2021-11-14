@@ -6,7 +6,7 @@ const createRootElement = (id: string) => {
   return container;
 };
 
-const addRootElement = (element: HTMLElement) => {
+const addParentElement = (element: HTMLElement) => {
   document.body.insertBefore(
     element,
     document.body.lastElementChild.nextElementSibling,
@@ -21,7 +21,7 @@ export const usePortal = (id: string) => {
     const parent = existingParent ? existingParent : createRootElement(id);
 
     if (!existingParent) {
-      addRootElement(parent);
+      addParentElement(parent);
     }
 
     if (!ref.current) {
