@@ -1,6 +1,6 @@
 export const bp = {
-  min: size => `@media(min-width: ${size}px)`,
-  max: size => `@media(max-width: ${size}px)`,
+  min: (size: string) => `@media(min-width: ${size}px)`,
+  max: (size: string) => `@media(max-width: ${size}px)`,
   xs: 700,
   sm: 900,
   md: 1400,
