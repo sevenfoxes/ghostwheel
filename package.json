@@ -1,0 +1,19 @@
+{
+  "name": "ghostwheel",
+  "version": "1.0.0",
+  "description": "react component management and integration",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/sevenfoxes/ghostwheel.git"
+  },
+  "author": "Scott Nesham",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sevenfoxes/ghostwheel/issues"
+  },
+  "homepage": "https://github.com/sevenfoxes/ghostwheel#readme"
+}
