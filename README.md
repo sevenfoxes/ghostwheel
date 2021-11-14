@@ -1,3 +1,3 @@
 #Ghostwheel
 
-React component inventory management
+component inventory management
