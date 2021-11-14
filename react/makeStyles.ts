@@ -1,2 +1,3 @@
-import { createUseStyles } from "react-jss";
-export const makeStyles = (s, name) => createUseStyles(s, { name });
+import { Styles, createUseStyles } from "react-jss";
+export const makeStyles =
+  (s: Styles , name: string) => createUseStyles(s, { name });
