@@ -6,6 +6,6 @@
 // you can alter your plugin structure by exporting a config variable
 
 export const config = {
-  pluginRoot: './src',
-  remoteCommand: 'git@github.com:sevenfoxes/ghostwheel-amber.git'
+  root: './plugin', // change where the plugin is
+  install: 'git clone git@github.com:sevenfoxes/ghostwheel-amber.git' // plugin strategy is completely up to you, the install command is what you need to ensure the plugin is installed. If not provided, npm install is assumed adequate
 }
