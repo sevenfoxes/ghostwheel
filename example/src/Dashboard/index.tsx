@@ -1,9 +1,13 @@
-import * as React from 'react';
+import { Route } from '../../ghostwheel';
+import { FC } from 'react';
+import { RouteProps } from 'react-router-dom';
 
-type DashboardProps = {
-  children?: React.ReactChild | React.ReactChild[];
+type DashboardProps = RouteProps & {
+
 };
 
-export const Dashboard: React.FC<DashboardProps> = ({ children }) => {
-  return <div>{children}</div>
+export const Dashboard:FC<DashboardProps> = () => {
+  return (<div>
+    hello world
+  </div>)
 }
