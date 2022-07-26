@@ -1,13 +1,15 @@
-import { Route } from '../../ghostwheel';
 import { FC } from 'react';
-import { RouteProps } from 'react-router-dom';
+import { useRecoilValue } from 'recoil';
+import { dashboardState } from './dashboardState';
 
-type DashboardProps = RouteProps & {
+type DashboardProps = {
 
 };
 
 export const Dashboard:FC<DashboardProps> = () => {
+  const { title } = useRecoilValue(dashboardState);
+
   return (<div>
-    hello world
+    {title}
   </div>)
 }

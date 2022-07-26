@@ -1,4 +1,4 @@
 import { BrowserRouter } from "react-router-dom";
-
-export * from './Route';
+export * from "react-router-dom";
+export const Router = BrowserRouter;
 export * from './routerState'

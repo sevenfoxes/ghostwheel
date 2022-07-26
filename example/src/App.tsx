@@ -1,16 +1,15 @@
 import { RecoilRoot } from "recoil";
 import { ThemeProvider } from "react-jss";
-import { theme } from "../ghostwheel";
+import { theme, Router } from "../ghostwheel";
 import { Routes } from "./Routes";
-import { BrowserRouter } from "react-router-dom"
 
 export const App = () => {
   return (
     <RecoilRoot>
       <ThemeProvider theme={theme}>
-        <BrowserRouter>
+        <Router>
           <Routes />
-        </BrowserRouter>
+        </Router>
       </ThemeProvider>
     </RecoilRoot>
   );
