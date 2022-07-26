@@ -1,11 +1,11 @@
-import { routerState } from "../ghostwheel";
-import { Route, BrowserRouter, Routes as DomRoutes } from "react-router-dom"
-import { useRecoilValue } from "recoil"
+import { routerState, routesSelector } from "../ghostwheel";
+import { Route, Routes as DomRoutes } from "react-router-dom"
+import { useRecoilState, useRecoilValue } from "recoil"
 import { Dashboard } from "./Dashboard"
 import { dashboardState } from "./Dashboard/dashboardState";
 
 export const Routes = () => {
-  const route = useRecoilValue(dashboardState);
+  const [route, setRoute] = useRecoilState(dashboardState);
 
   return (
     <DomRoutes>

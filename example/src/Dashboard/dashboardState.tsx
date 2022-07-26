@@ -1,4 +1,4 @@
-import { RouterState } from "../../ghostwheel";
+import { Page } from "../../ghostwheel";
 import { atom } from "recoil";
 
 export const dashboardState = atom({
@@ -6,5 +6,5 @@ export const dashboardState = atom({
   default: {
     path: '/',
     title: 'home'
-  } as RouterState
+  } as Page
 })
