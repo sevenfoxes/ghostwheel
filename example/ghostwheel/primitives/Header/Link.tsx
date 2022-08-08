@@ -8,9 +8,13 @@ export interface LinkProps {
 }
 
 const StyledLink = styled(NavLink)`
-  text-decoration: 'none';
-  text-transform: 'capitalize';
-  color: 'white';
+  text-decoration: none;
+  text-transform: capitalize;
+  color: white;
+  margin-right: .4rem;
+  &:hover {
+    text-decoration: underline;
+  }
 `
 export const Link: FC<LinkProps> = ({ path, title }) => {
 

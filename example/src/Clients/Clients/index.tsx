@@ -12,7 +12,6 @@ export const Clients: FC<ClientsProps> = () => {
 
   return (
     <Page title={r.title}>
-      clients
       <ul>
         {!!clients?.length && clients.map((client: Client, i: number) => <Client key={i} {...client} />)}
       </ul>

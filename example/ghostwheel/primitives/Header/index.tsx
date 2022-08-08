@@ -5,6 +5,7 @@ import { AppBar, Box, Container, Toolbar} from '@mui/material';
 import { routesState, useLocation } from "../Router";
 import { FC } from "react";
 import { Link } from './Link';
+import styled from '@emotion/styled';
 
 export interface HeaderProps {
   title?: string;
@@ -20,7 +21,7 @@ export const Header: FC<HeaderProps> = ({ title }) => {
       <Container>
         <Toolbar>
           <Link path={'/'} title={app.name} />
-          {title ? `- ${title}` : ''}
+          {title ? `  - ${title}` : ''}
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {Object.values(
                 omit([location.pathname.split('/').filter(p => p !== '')[0], 'dashboard'])(routes)

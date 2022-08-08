@@ -1,13 +1,15 @@
 import { placeholderApi } from "../placeholder.service";
 import { atom, atomFamily, selector, selectorFamily } from "recoil";
+import { get  as aget} from '../engine'
+import { isEmpty } from "lodash/fp";
 
 export interface ClientInterface {
-  client?: Client;
-  request?: Ambyr<Client[]>
+  client?: any;
+  request?: any;
 }
 export interface ClientsInterface {
-  clients?: Client[];
-  request?: Ambyr<Client[]>
+  clients?: any;
+  request?: any
 }
 
 export const clientApiState = atom({
@@ -25,33 +27,36 @@ export const clientState = atomFamily({
 
 export const clientApiSelector = selector({
   key: 'clientApiSelector',
-  get: ({ get }) => {
-    const request = get(clientApiState);
-    return ({ request, clients: request.data }) as ClientsInterface;
+  get: async ({ get }) => {
+    const rState = get(clientApiState);
+    const request = await aget(placeholderApi('users')) ;
+    let clients = await request.json();
+
+    return ({ request: isEmpty(rState) ? request : rState, clients  });
   },
-  set: ({ set }, { request }: ClientInterface) => {
+  set: ({ set }, { request }: any) => {
     set(clientApiState, request)
-    return request.data.map((client) => set(clientState(client.id), client))
+    return request.data.map((client: Client) => set(clientState(client.id), client))
   }
 })
 
 export const clientsSelector = selector({
   key: 'clientsSelector',
-  get: ({ get }) => {
-    const request = get(clientApiState);
+  get: async ({ get }) => {
+    const {request, clients} = await get(clientApiSelector);
 
-    return ({ clients: request.data, request}) as ClientsInterface
+    return ({ clients, request}) as ClientsInterface
   },
   set: ({ set }, { request }: ClientsInterface) => {
     set(clientApiState, request)
-    request.data.map((client) => set(clientState(client.id), client))
+    request.data.map((client: Client) => set(clientState(client.id), client))
   }
 })
 
 export const clientSelector = selectorFamily({
   key: 'clientSelector',
-  get: (id) => ({ get }) => {
-    const client = get(clientState(id));
+  get: (id: number) => ({ get }) => {
+    const client = get(clientsSelector).clients[id];
     const request = get(clientApiState);
 
     return ({ request, client})}
