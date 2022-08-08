@@ -1,15 +1,16 @@
-import { appState, routerState, useAsRoute } from '../../ghostwheel';
-import { FC, useEffect } from 'react';
-import { useRecoilValue, useSetRecoilState } from 'recoil';
+import { Page } from '../../ghostwheel';
+import { FC } from 'react';
+import { useRecoilState } from 'recoil';
 import { dashboardState } from './dashboardState';
 
-type DashboardProps = {
-
-};
+type DashboardProps = { };
 
 export const Dashboard:FC<DashboardProps> = () => {
-  const [{title}] = useAsRoute(dashboardState)
-  return (<div>
-    {title}
-  </div>)
+  const [{title}] = useRecoilState(dashboardState);
+
+  return (
+    <Page title={title}>
+      {title}
+    </Page>
+  )
 }

@@ -1,9 +1,6 @@
-import { atom, atomFamily, selectorFamily } from "recoil";
+import { atom, atomFamily } from "recoil";
+import { routes } from "../../../src/routes";
 
-export interface RouterState {
-  path: string;
-  title: string;
-}
 
 export const routerState = atomFamily({
   key: 'routerState',
@@ -12,14 +9,5 @@ export const routerState = atomFamily({
 
 export const routesState = atom({
   key: 'routesState',
-  default: []
-})
-
-export const routesSelector = selectorFamily({
-  key: 'routesSelector',
-  get: k => ({ get }) => get(routerState(k)),
-  set: k => ({ set, get }, r) => {
-    set(routerState(k), r)
-    set(routesState, [...get(routesState), r])
-  }
+  default: routes
 })

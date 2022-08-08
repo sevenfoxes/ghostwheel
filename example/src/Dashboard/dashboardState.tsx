@@ -1,10 +1,7 @@
-import { Page } from "../../ghostwheel";
 import { atom } from "recoil";
+import { dashboard } from "./dashboard";
 
 export const dashboardState = atom({
   key: 'dashboardState',
-  default: {
-    path: '/',
-    title: 'home'
-  } as Page
-})
+  default: dashboard as Page
+});
