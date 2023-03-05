@@ -7,3 +7,7 @@ type Theme = {
     };
   }
 }
+
+type Themes = {
+  [t:{}]: Theme
+}

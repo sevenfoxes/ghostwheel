@@ -5,7 +5,8 @@ import { Logo } from 'primitives/Logo'
 const Root: any = styled('div')(({theme}:any) => ({
   alignItems: 'center',
   display: 'grid',
-  gridTemplateColumns: 'min-content 1fr',
+  gridTemplateColumns: 'min-content 1fr min-content',
+  justifyItems: 'right',
   background: theme.colors.main,
   color: theme.colors.white,
   padding: theme.variables.defaultPadding,
@@ -16,7 +17,7 @@ export const Header: FC<any> = ({ children }) => {
   return (
     <Root>
       <Logo />
-      <div>{children}</div>
+      {children}
     </Root>
   );
 }

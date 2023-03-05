@@ -1,17 +1,21 @@
-import { RecoilRoot } from "recoil";
+import { useRecoilState } from "recoil";
 import { ThemeProvider } from "@emotion/react";
-
-import * as theme from "./theme";
 import { Header } from "primitives/Header";
+import { Button } from "primitives/Button";
+import { themeSelector } from "./themeState";
 
 export const App = () => {
+  const [theme, setTheme] = useRecoilState(themeSelector);
+
+  const handleThemeChange = () => {
+    setTheme('dark')
+  }
+
   return (
     <ThemeProvider theme={theme}>
-      <RecoilRoot>
         <Header>
-Things in a header
+          <Button onClick={handleThemeChange}>Do a barrel roll</Button>
         </Header>
-      </RecoilRoot>
       </ThemeProvider>
   );
 };

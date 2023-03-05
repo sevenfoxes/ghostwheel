@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import Icon from '@mdi/react';
 import { mdiTire as logoPath } from '@mdi/js';
 import { useRecoilValue } from 'recoil';
-import { appState } from 'src/appState';
+import { appState, routesState } from 'src/appState';
 
 const Root: any = styled('a')(({theme}:any) => ({
   alignItems: 'center',
@@ -20,10 +20,11 @@ const StyledIcon: any = styled(Icon)(({theme}:any) => ({
 }));
 
 export const Logo: FC<any> = () => {
-  const { name } = useRecoilValue(appState)
+  const { name } = useRecoilValue(appState);
+  const { home } = useRecoilValue(routesState);
 
   return (
-    <Root href={'/'}>
+    <Root href={home}>
       <StyledIcon path={logoPath} size={2} />
       {name}
     </Root>
