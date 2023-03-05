@@ -1,4 +1,4 @@
-import { atom, selector } from "recoil";
+import { atom, selector, selectorFamily } from "recoil";
 
 // project specific colors
 const black = "#2b2b2b";
@@ -28,18 +28,57 @@ const fonts = {
   sansSerifFont: robotoFont,
 };
 
-const variables = {
-  site: {
-    maxWidth: 1300
-  },
-  defaultMargin: "1rem",
-  defaultPadding: "1rem",
-};
-
 const light = {
+  name: 'light',
   colors,
   fonts,
-  variables
+  site: {
+    maxWidth: 1300,
+    margin: "1rem",
+    padding: "1rem"
+  },
+  input: {
+    default: {
+      background: colors.main,
+      borderWidth: 0,
+      g: 2
+    },
+    outlined: {
+      g: 2,
+      borderColor: colors.main,
+      borderWidth: 2
+    }
+  },
+  logo: {
+    fill: colors.main
+  },
+  toggle: {
+    size: 35,
+    gap: 2
+  },
+}
+
+const dark = {
+  ...light,
+  name: 'dark',
+  colors: {
+    ...light.colors,
+    main: colors.black,
+    mainText: colors.white
+  },
+  input: {
+    g: 2,
+    default: {
+      background: colors.white,
+    },
+    outlined: {
+      borderWidth: 2,
+      borderColor: colors.white,
+    }
+  },
+  logo: {
+    fill: colors.white
+  }
 }
 
 // put these in an atom and apply
@@ -47,12 +86,7 @@ export const themesState = atom({
   key: 'themesState',
   default: {
     light,
-    dark: {
-      ...light,
-      colors: {
-        main: colors.black
-      }
-    }
+    dark
   } as Themes
 });
 
@@ -69,5 +103,13 @@ export const themeSelector = selector({
     return get(themesState)[theme]
   },
   set: ({ set }, newTheme: any) => set(activeThemeState, newTheme)
+});
+
+export const themeOverrideSelector = selectorFamily({
+  key: 'themeOverrideSelector',
+  get: (key: string) => ({ get }): Theme => {
+
+    return get(themesState)[key]
+  },
 });
 

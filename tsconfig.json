@@ -14,7 +14,8 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "paths": {
-      "primitives/*": ["./primitives/*"]
+      "primitives/*": ["./primitives/*"],
+      "components/*": ["./components/*"]
     }
   }
 }

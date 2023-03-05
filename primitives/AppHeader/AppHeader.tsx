@@ -9,14 +9,14 @@ const Root: any = styled('div')(({theme}:any) => ({
   justifyItems: 'right',
   background: theme.colors.main,
   color: theme.colors.white,
-  padding: theme.variables.defaultPadding,
-  gap: theme.variables.defaultPadding
+  padding: theme.site.padding,
+  gap: theme.site.padding
 }));
 
-export const Header: FC<any> = ({ children }) => {
+export const AppHeader: FC<any> = ({ children }) => {
   return (
     <Root>
-      <Logo />
+      <Logo theme={'dark'} />
       {children}
     </Root>
   );

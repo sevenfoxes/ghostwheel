@@ -54,7 +54,8 @@ export default {
     alias: {
       "lodash-es": "lodash",
       "lodash.debounce": "lodash/debounce",
-      primitives$: path.resolve(__dirname, "primitives/")
+      primitives$: path.resolve(__dirname, "primitives/"),
+      components$: path.resolve(__dirname, "components/")
     },
   },
   plugins: [
