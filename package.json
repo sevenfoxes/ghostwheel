@@ -1,38 +1,54 @@
 {
   "name": "ghostwheel",
   "version": "1.0.0",
-  "description": "react component management and integration",
+  "description": "atomic state components",
   "main": "index.js",
+  "type": "module",
   "scripts": {
+    "start": "webpack serve --config webpack.config.js --mode=development --progress",
+    "jest": "jest",
     "test": "jest"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/sevenfoxes/ghostwheel.git"
+    "url": "github.com:sevenfoxes/mnml.git"
   },
   "author": "Scott Nesham",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/sevenfoxes/ghostwheel/issues"
-  },
-  "homepage": "https://github.com/sevenfoxes/ghostwheel#readme",
-  "devDependencies": {
-    "@types/react": "^17.0.34",
-    "clean-webpack-plugin": "^4.0.0",
-    "eslint": "^8.2.0",
-    "eslint-plugin-jest": "^25.2.4",
-    "file-loader": "^6.2.0",
-    "ts-loader": "^9.2.6",
-    "typescript": "^4.4.4"
-  },
+  "license": "ISC",
   "dependencies": {
-    "classnames": "^2.3.1",
-    "color": "^4.0.1",
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@mdi/js": "^7.1.96",
+    "@mdi/react": "^1.6.1",
+    "@types/react": "^18.0.28",
+    "date-fns": "^2.17.0",
     "lodash": "^4.17.21",
+    "mdi-react": "^7.4.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-jss": "^10.8.2",
-    "recoil": "^0.5.2",
-    "use-react-dimensions": "^2.0.1"
+    "react-router-dom": "^5.2.0",
+    "recoil": "^0.3.1",
+    "rxjs": "^6.6.6",
+    "yup": "^0.32.9"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.11.9",
+    "@testing-library/react": "^11.2.5",
+    "@testing-library/user-event": "^12.7.3",
+    "compression-webpack-plugin": "^9.2.0",
+    "esbuild-loader": "^3.0.1",
+    "eslint": "^8.15.0",
+    "eslint-plugin-jest": "^26.1.5",
+    "eslint-plugin-react": "^7.29.4",
+    "eslint-plugin-react-hooks": "^4.5.0",
+    "file-loader": "^6.2.0",
+    "html-loader": "^3.1.0",
+    "html-webpack-plugin": "^5.5.0",
+    "jest": "^28.1.0",
+    "jest-config": "^28.1.0",
+    "typescript": "^3.9.9",
+    "webpack": "^5.72.1",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.9.0"
   }
 }
