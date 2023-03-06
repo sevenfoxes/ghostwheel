@@ -1,12 +1,11 @@
 type Theme = {
-  colors: {};
-  fonts: {};
-  [module:string]: {};
-  variables: {
-    site: {
-      maxWidth: number;
-    };
-  }
+  colors: {
+    [color: string]: string;
+  };
+  fonts: {
+    [font: string]: string;
+  };
+  [module:string]: any;
 }
 
 type Themes = {

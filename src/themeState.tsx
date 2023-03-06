@@ -33,11 +33,6 @@ const light = {
   name: 'light',
   colors,
   fonts,
-  site: {
-    maxWidth: 1300,
-    margin: "1rem",
-    padding: "1rem"
-  },
   input: {
     default: {
       background: colors.main,
@@ -51,7 +46,10 @@ const light = {
     }
   },
   app: {
-    background: colors.white
+    background: colors.white,
+    maxWidth: 1300,
+    margin: "1rem",
+    padding: "1rem"
   },
   logo: {
     fill: colors.main
@@ -67,7 +65,9 @@ const light = {
 const dark = {
   ...light,
   app: {
-    background: colors.black
+    ...light.app,
+    background: colors.black,
+    color: colors.white
   },
   name: 'dark',
   colors: {
