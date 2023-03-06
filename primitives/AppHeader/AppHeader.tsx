@@ -10,10 +10,14 @@ const Root: any = styled('div')(({theme}:any) => ({
   background: theme.colors.main,
   color: theme.colors.white,
   padding: theme.site.padding,
-  gap: theme.site.padding
+  gap: theme.site.padding,
+  '& svg': {
+    color: theme.colors.mainText,
+  }
 }));
 
 export const AppHeader: FC<any> = ({ children }) => {
+
   return (
     <Root>
       <Logo theme={'dark'} />

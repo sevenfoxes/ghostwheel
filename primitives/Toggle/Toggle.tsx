@@ -1,12 +1,12 @@
 import styled from "@emotion/styled";
-import { FC, useState } from "react";
+import { FC, ReactNode, useState } from "react";
 import { useRecoilValue } from "recoil";
 import { themeOverrideSelector } from "src/themeState";
 
 export type ToggleProps = {
   value?: boolean;
-  offLabel?: string;
-  onLabel?: string;
+  offLabel?: ReactNode;
+  onLabel?: ReactNode;
   theme?: string;
   primitiveTheme?: string;
   onClick: (e) => void;
@@ -50,7 +50,7 @@ const Controls: FC<any> = styled('span')(({ theme, altTheme, primitiveTheme, che
       height: d,
       background: 'white',
       left: checked ? `calc(100% - ${d}px - ${pTheme.borderWidth || 0}px)` : pTheme.borderWidth,
-      top: 2
+      top: input.g
     }
   }
 })

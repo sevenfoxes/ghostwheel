@@ -8,6 +8,7 @@ const orange = "#ed8b00";
 const white = "#fff";
 const colors = {
   main: blue,
+  mainText: white,
   accept: "#3db14c",
   warn: red,
   error: red,
@@ -49,21 +50,28 @@ const light = {
       borderWidth: 2
     }
   },
+  app: {
+    background: colors.white
+  },
   logo: {
     fill: colors.main
   },
   toggle: {
-    size: 35,
-    gap: 2
+    size: 25,
   },
+  iconButton: {
+    height: 24
+  }
 }
 
 const dark = {
   ...light,
+  app: {
+    background: colors.black
+  },
   name: 'dark',
   colors: {
     ...light.colors,
-    main: colors.black,
     mainText: colors.white
   },
   input: {
