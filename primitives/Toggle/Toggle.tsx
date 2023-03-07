@@ -8,7 +8,7 @@ export type ToggleProps = {
   offLabel?: ReactNode;
   onLabel?: ReactNode;
   theme?: string;
-  primitiveTheme?: string;
+  variant?: string;
   onClick: (e) => void;
 }
 
@@ -17,17 +17,18 @@ const Root: any = styled('label')(({theme}: any) => ({
   display: 'grid',
   gridTemplateColumns: '1fr min-content 1fr',
   gap: 10,
+  cursor: 'pointer',
   input: {
     visibility: 'hidden',
     position: 'absolute'
   }
 }));
 
-const Controls: FC<any> = styled('span')(({ theme, altTheme, primitiveTheme, checked }: any) => {
+const Controls: FC<any> = styled('span')(({ theme, altTheme, variant, checked }: any) => {
   const themesState = useRecoilValue(themeOverrideSelector(altTheme));
   const { input, toggle } = altTheme ? themesState : theme
 
-  const pTheme = input[primitiveTheme];
+  const pTheme = input[variant];
   const d = toggle.size - (2 * pTheme.borderWidth + 2 * input.g)
   const borderRadius = `calc(${toggle.size / 2}px)`
 
@@ -56,7 +57,7 @@ const Controls: FC<any> = styled('span')(({ theme, altTheme, primitiveTheme, che
 })
 
 export const Toggle: FC<ToggleProps> = (props) => {
-  const { value = false, onLabel = 'on', offLabel = 'off', onClick, theme, primitiveTheme = 'default' } = props;
+  const { value = false, onLabel = 'on', offLabel = 'off', onClick, theme, variant = 'default' } = props;
   const [checked, setChecked] = useState(value);
 
   const handleClick = (e) => {
@@ -67,7 +68,7 @@ export const Toggle: FC<ToggleProps> = (props) => {
   return (
     <Root>
       {offLabel}
-      <Controls altTheme={theme} primitiveTheme={primitiveTheme} checked={checked} />
+      <Controls altTheme={theme} variant={variant} checked={checked} />
       {onLabel}
       <input type={'checkbox'} checked={checked} onChange={handleClick} />
     </Root>

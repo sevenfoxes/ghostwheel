@@ -19,7 +19,7 @@ export const LightSwitch = () => {
       offLabel={<Icon path={mdiLightbulbOutline} />}
       onClick={handleThemeChange}
       theme={'dark'}
-      primitiveTheme={'outlined'}
+      variant={'outlined'}
       value={isLight}
     />
   );
