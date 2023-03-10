@@ -1,9 +1,19 @@
-import { FC } from "react"
+import { Page } from "primitives/Page";
+import { FC } from "react";
+import { styled } from "utils";
+
+const Message = styled('div')(({ theme }) => ({
+  textAlign: 'center',
+  fontWeight: 'bold',
+  fontSize: 30
+}))
 
 export const NoMatch: FC<{}> = () => {
   return (
-    <>
-      that's a 404
-    </>
+    <Page>
+      <Message>
+        Page Not found
+      </Message>
+    </Page>
   )
 }

@@ -10,9 +10,9 @@ interface ContainerProps {
 const Root = styled('div')(({ theme }) => {
   return {
     '& > div': {
-      padding: theme.app.padding,
       maxWidth: theme.app.maxWidth,
-      margin: '0 auto'
+      margin: '0 auto',
+      overflow: 'auto'
     }
   }
 });

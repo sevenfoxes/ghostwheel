@@ -5,8 +5,9 @@ import { mdiTire as logoPath } from '@mdi/js';
 import { useRecoilValue } from 'recoil';
 import { appState, routesState } from 'src/appState';
 import { themeOverrideSelector } from 'src/themeState';
+import { Link } from 'react-router-dom';
 
-const Root: any = styled('a')(({theme, altTheme}:any) => {
+const Root: any = styled(Link)(({ theme, altTheme }: any) => {
   const themesState = useRecoilValue(themeOverrideSelector(altTheme));
   const { logo } = altTheme ? themesState : theme
 
@@ -25,7 +26,7 @@ export const Logo: FC<any> = ({theme}) => {
   const { home } = useRecoilValue(routesState);
 
   return (
-    <Root href={home} altTheme={theme}>
+    <Root to={home} altTheme={theme}>
       <Icon path={logoPath} size={2} />
       {name}
     </Root>

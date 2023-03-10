@@ -1,12 +1,13 @@
-import { Container } from "primitives/Container";
-import { Page } from "primitives/Page"
 import { FC } from "react";
+import { Container } from "primitives/Container";
+import { H } from "primitives/H";
+import { Page } from "primitives/Page"
 
 export const Home: FC<{}> = () => {
   return (
     <Page>
       <Container>
-        <h1>Welcome</h1>
+        <H sx={{ marginTop: 0 }}>Welcome</H>
         lorem ipsum dolor sit amet
       </Container>
     </Page>

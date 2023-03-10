@@ -1,6 +1,7 @@
 import { useRecoilValue } from "recoil";
 import { ThemeProvider } from "@emotion/react";
 import { AppHeader } from "primitives/AppHeader";
+import { Link } from "primitives/Link";
 import { themeSelector } from "./themeState";
 import { LightSwitch } from "components/LightSwitch";
 import { UserMenu } from "components/UserMenu";
@@ -9,6 +10,7 @@ import {styled} from "utils";
 import { Outlet, Routes, Route, BrowserRouter } from "react-router-dom";
 import { Home } from "./features/Home";
 import { NoMatch } from "./features/NoMatch";
+import { SearchPage } from "./features/Search";
 
 interface AppProps {}
 
@@ -22,6 +24,7 @@ const Layout: FC<any> = () => {
   return (
     <>
       <AppHeader>
+        <Link to={"/search"}>search</Link>
         <LightSwitch />
         <UserMenu />
       </AppHeader>
@@ -39,8 +42,9 @@ export const App:FC<AppProps> = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
-            <Route index element={<Home />} />
-            <Route path="*" element={<NoMatch />} />
+              <Route index element={<Home />} />
+              <Route path="/search" element={<SearchPage />} />
+              <Route path="*" element={<NoMatch />} />
           </Route>
         </Routes>
       </BrowserRouter>
