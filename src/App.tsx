@@ -11,6 +11,7 @@ import { Outlet, Routes, Route, BrowserRouter } from "react-router-dom";
 import { Home } from "./features/Home";
 import { NoMatch } from "./features/NoMatch";
 import { SearchPage } from "./features/Search";
+import { DimensionsPage } from "./features/Dimensions";
 
 interface AppProps {}
 
@@ -44,6 +45,7 @@ export const App:FC<AppProps> = () => {
           <Route path="/" element={<Layout />}>
               <Route index element={<Home />} />
               <Route path="/search" element={<SearchPage />} />
+              <Route path="/dimensions" element={<DimensionsPage />} />
               <Route path="*" element={<NoMatch />} />
           </Route>
         </Routes>

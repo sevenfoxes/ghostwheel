@@ -3,6 +3,7 @@ import { FC, ReactNode } from "react";
 
 export type PageProps = {
   children: ReactNode;
+  className?: string;
 }
 
 const Root: any = styled('div')(({theme}) => ({
