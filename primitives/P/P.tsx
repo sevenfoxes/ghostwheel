@@ -1,5 +1,5 @@
 import { FC, ReactNode } from "react";
-import { styled } from "utils";
+import styled from '@emotion/styled';
 
 interface PProps {
   component?: string;

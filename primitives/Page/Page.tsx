@@ -1,18 +1,13 @@
 import {styled} from "utils";
 import { FC, ReactNode } from "react";
+import { Grid, GridProps } from "primitives/Grid";
+import { useDimensions } from "src/hooks/useDimensions";
 
-export type PageProps = {
-  children: ReactNode;
-  className?: string;
-}
+const Root: any = styled(Grid)(({ height }) => ({ height }));
 
-const Root: any = styled('div')(({theme}) => ({
-  display: 'grid',
-  padding: theme.app.padding,
-}));
-
-export const Page: FC<PageProps> = (props) => {
+export const Page: FC<GridProps> = (props) => {
+  const { state } = useDimensions('header')
   return (
-    <Root {...props} />
+    <Root {...props} height={`calc(100vh - ${state.height}px)`} />
   );
 }

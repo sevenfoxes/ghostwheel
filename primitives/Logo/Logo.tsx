@@ -17,7 +17,7 @@ const Root: any = styled(Link)(({ theme, altTheme }: any) => {
     display: 'grid',
     gridTemplateColumns: 'min-content 1fr',
     textDecoration: 'none',
-    color: logo.fill
+    color: '#fff'
   }
 });
 
@@ -26,7 +26,7 @@ export const Logo: FC<any> = ({theme}) => {
   const { home } = useRecoilValue(routesState);
 
   return (
-    <Root to={home} altTheme={theme}>
+    <Root to={home}>
       <Icon path={logoPath} size={2} />
       {name}
     </Root>

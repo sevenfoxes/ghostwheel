@@ -1,6 +1,7 @@
 import { MutableRefObject, useEffect, useRef } from "react";
 import { useRecoilState } from "recoil";
-import { Dimensions, dimensionSelector } from "./useDimensionState";
+import { Dimensions, dimensionSelector } from "./useDimensionsState";
+
 
 interface UseDimensions<T> {
   ref: MutableRefObject<T>;

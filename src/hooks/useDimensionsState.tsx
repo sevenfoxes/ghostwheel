@@ -20,8 +20,8 @@ export const dimensionSelector = selectorFamily({
     return {
       x: state.x,
       y: state.y,
-      height: Math.ceil(state.height),
-      width: Math.ceil(state.width)
+      height: state.height ? Math.ceil(state.height) : 0,
+      width: state.width ? Math.ceil(state.width) : 0
     }
   },
   set: (k) => ({ set }, rect) => set(dimensionState(k), rect)

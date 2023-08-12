@@ -1,6 +1,6 @@
 import { FC, ReactNode } from "react";
 import { Link as RouterLink } from "react-router-dom";
-import { styled } from "utils";
+import styled from '@emotion/styled';
 
 interface LinkProps {
   children: ReactNode;

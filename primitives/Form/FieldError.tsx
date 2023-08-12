@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { useField } from './useField';
-import { styled } from "utils";
+import styled from '@emotion/styled';
 
 interface FieldErrorProps {
   name: string;

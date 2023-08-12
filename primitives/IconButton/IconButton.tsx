@@ -1,4 +1,4 @@
-import { styled } from "utils";
+import styled from '@emotion/styled';
 import { Icon } from "primitives/Icon";
 import { ButtonHTMLAttributes, FC } from "react";
 

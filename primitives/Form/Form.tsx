@@ -1,6 +1,6 @@
 import type { FC, ReactNode } from "react";
 import type { AnyObjectSchema } from "yup";
-import { styled } from "utils";
+import styled from '@emotion/styled';
 import { FormContext } from "./FormContext";
 import { FormErrors } from "./FormErrors";
 import { useFormInit } from "./useFormInit";

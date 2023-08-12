@@ -6,9 +6,9 @@ import { Partner } from "./components/Partner";
 
 export const DimensionsPage: FC<{}> = () => {
   return (
-    <Page columns={'1fr 1fr'}>
-      <Partner />
-      <Partner />
+    <Page columns={'1fr 1fr'} sx={{ overflow: 'hidden' }}>
+      <Partner partnerKey={1} partnerPartnerKey={2} />
+      <Partner facing={'left'} partnerKey={2} partnerPartnerKey={1} />
     </Page>
   )
 }

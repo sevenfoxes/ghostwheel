@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { styled } from "utils";
+import styled from '@emotion/styled';
 import { uniq } from "lodash/fp";
 import { useForm } from "./useForm";
 

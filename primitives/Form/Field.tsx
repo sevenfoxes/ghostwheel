@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { styled } from "utils";
+import styled from '@emotion/styled';
 import { useField } from "./useField";
 import { FieldError } from "./FieldError";
 import { Input } from "primitives/Input/Input";

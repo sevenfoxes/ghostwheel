@@ -36,7 +36,7 @@ export default {
         ],
       },
       {
-        test: /\.(jpe?g|svg|png|gif|ico)$/i,
+        test: /\.(jpg|svg|png|gif|ico)$/i,
         use: [
           {
             loader: "file-loader",

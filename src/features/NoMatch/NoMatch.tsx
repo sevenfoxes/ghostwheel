@@ -1,6 +1,6 @@
 import { Page } from "primitives/Page";
 import { FC } from "react";
-import { styled } from "utils";
+import styled from '@emotion/styled';
 
 const Message = styled('div')(({ theme }) => ({
   textAlign: 'center',

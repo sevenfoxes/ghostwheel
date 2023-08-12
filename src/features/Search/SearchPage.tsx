@@ -1,4 +1,4 @@
-import { styled } from "utils";
+import styled from '@emotion/styled';
 import { FC } from "react";
 import { Page } from "primitives/Page";
 
