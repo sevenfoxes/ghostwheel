@@ -58,7 +58,7 @@ export const Partner: FC<PartnerProps> = (props) => {
         <Bubble x={state.x} y={state.y} facing={facing} >
           howdy pardner!
           <p>I'm {state.height / 100}ft. tall and {state.width / 100}ft. around!</p>
-          <p>He's {partner.state.height / 100}ft. tall and {partner.state.width}ft. around!</p>
+          <p>He's {partner.state.height / 100}ft. tall and {partner.state.width / 100}ft. around!</p>
         </Bubble>
       </Root>
     </>
