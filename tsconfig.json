@@ -15,7 +15,12 @@
     "jsx": "react-jsx",
     "paths": {
       "primitives/*": ["./primitives/*"],
-      "components/*": ["./components/*"]
+      "components/*": [
+        "./components/*"
+      ],
+      "hooks/*": [
+        "./hooks/*"
+      ]
     }
   }
 }
